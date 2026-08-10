@@ -38,8 +38,8 @@ jobs:
           SITE_URL: ${{ steps.pages.outputs.origin }}${{ steps.pages.outputs.base_path }}
           SITE_ROOT: ${{ steps.pages.outputs.base_path }}/
         run: |
-          node -e "const fs=require('fs'); fs.appendFileSync('_config.yml', '\nurl: '+process.env.SITE_URL+'\nroot: '+process.env.SITE_ROOT+'\n')"
-          npm run build
+          node -e "const fs=require('fs'); fs.writeFileSync('_config.pages.yml', 'url: '+process.env.SITE_URL+'\nroot: '+process.env.SITE_ROOT+'\n')"
+          npx hexo generate --config _config.yml,_config.pages.yml
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
