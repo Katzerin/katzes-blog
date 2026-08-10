@@ -8,6 +8,9 @@
     "clean": "hexo clean",
     "server": "hexo server"
   },
+  "hexo": {
+    "version": ""
+  },
   "dependencies": {
     "hexo": "^8.0.0",
     "hexo-generator-archive": "^2.0.0",
