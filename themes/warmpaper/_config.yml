@@ -44,7 +44,7 @@ giscus:
 # Profile (shown on homepage above post list)
 profile:
   avatar: /images/avatar.png
-  description: "A chapel of intimate solitude…opening into a vision of grandeur"
+  description: "A chapel of intimate reflection… opening into a vision of grandeur."
   links: []
 
 # Post excerpt
