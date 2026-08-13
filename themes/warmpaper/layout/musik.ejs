@@ -1,0 +1,49 @@
+<section class="musik-page">
+  <header class="musik-header">
+    <p class="musik-kicker">Katze’s record shelf</p>
+    <h1>Musik</h1>
+    <p class="musik-intro">我喜欢的专辑，以及听过之后留下的文字。</p>
+  </header>
+
+  <% var albums = Array.isArray(page.albums) ? page.albums : []; %>
+  <% if (albums.length) { %>
+    <div class="album-grid">
+      <% albums.forEach(function(album) { %>
+        <article class="album-card">
+          <div class="album-cover-wrap">
+            <% if (album.cover) { %>
+              <img class="album-cover" src="<%- url_for(album.cover) %>" alt="<%= album.title %> — <%= album.artist %> album cover" loading="lazy">
+            <% } else { %>
+              <div class="album-cover album-cover-placeholder" aria-hidden="true">
+                <span class="album-disc"></span>
+              </div>
+            <% } %>
+          </div>
+          <div class="album-copy">
+            <div class="album-heading">
+              <div>
+                <h2><%= album.title %></h2>
+                <p class="album-artist"><%= album.artist %></p>
+              </div>
+              <% if (album.year) { %><span class="album-year"><%= album.year %></span><% } %>
+            </div>
+            <% if (album.tags && album.tags.length) { %>
+              <ul class="album-tags" aria-label="Genres">
+                <% album.tags.forEach(function(tag) { %><li><%= tag %></li><% }) %>
+              </ul>
+            <% } %>
+            <% if (album.review) { %><div class="album-review"><%- markdown(album.review) %></div><% } %>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <div class="musik-empty">
+      <span class="empty-record" aria-hidden="true"><span></span></span>
+      <div>
+        <h2>唱片架尚空</h2>
+        <p>喜欢的声音会慢慢在这里留下来。</p>
+      </div>
+    </div>
+  <% } %>
+</section>

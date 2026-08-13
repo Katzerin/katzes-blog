@@ -3,6 +3,7 @@
 # Navigation menu
 menu:
   Home: /
+  Musik: /musik
   About: /about
 
 # Table of Contents (right sidebar on post pages)
