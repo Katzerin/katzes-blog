@@ -3,7 +3,11 @@
     <a href="<%- url_for(post.path) %>"><%= post.title || '(Untitled)' %></a>
   </h2>
   <div class="post-card-meta">
-    <time datetime="<%- date_xml(post.date) %>"><%- date(post.date, 'YYYY-MM-DD') %></time>
+    <% if (post.display_date) { %>
+      <span><%= post.display_date %></span>
+    <% } else { %>
+      <time datetime="<%- date_xml(post.date) %>"><%- date(post.date, 'YYYY-MM-DD') %></time>
+    <% } %>
     <% if (post.categories && post.categories.length) { %>
       <span class="separator">&middot;</span>
       <% post.categories.each(function(cat){ %>

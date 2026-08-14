@@ -12,7 +12,11 @@ var tocContent = (theme.toc && theme.toc.enable) ? toc(page.content, {
   <header class="post-header">
     <h1 class="post-title"><%= page.title %></h1>
     <div class="post-meta">
-      <time datetime="<%- date_xml(page.date) %>"><%- date(page.date, 'YYYY-MM-DD') %></time>
+      <% if (page.display_date) { %>
+        <span><%= page.display_date %></span>
+      <% } else { %>
+        <time datetime="<%- date_xml(page.date) %>"><%- date(page.date, 'YYYY-MM-DD') %></time>
+      <% } %>
       <% if (page.categories && page.categories.length) { %>
         <span class="separator">&middot;</span>
         <% page.categories.each(function(cat){ %>

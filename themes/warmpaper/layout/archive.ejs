@@ -8,7 +8,7 @@
       <% lastYear = year; %>
     <% } %>
     <div class="archive-post">
-      <span class="archive-post-date"><%- date(post.date, 'MM-DD') %></span>
+      <span class="archive-post-date"><%= post.display_date || date(post.date, 'MM-DD') %></span>
       <span class="archive-post-title">
         <a href="<%- url_for(post.path) %>"><%= post.title || '(Untitled)' %></a>
       </span>

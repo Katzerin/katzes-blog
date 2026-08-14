@@ -2,7 +2,7 @@
   <h1 class="tag-title"><span>#</span> <%= page.tag %></h1>
   <% page.posts.each(function(post){ %>
     <div class="archive-post">
-      <span class="archive-post-date"><%- date(post.date, 'YYYY-MM-DD') %></span>
+      <span class="archive-post-date"><%= post.display_date || date(post.date, 'YYYY-MM-DD') %></span>
       <span class="archive-post-title">
         <a href="<%- url_for(post.path) %>"><%= post.title || '(Untitled)' %></a>
       </span>
