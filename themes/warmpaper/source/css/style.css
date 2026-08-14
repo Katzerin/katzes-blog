@@ -838,6 +838,11 @@ img {
   padding-right: calc(var(--sidebar-width) + var(--toc-gap));
 }
 
+.post-has-toc.post-toc-left {
+  padding-right: 0;
+  padding-left: calc(var(--sidebar-width) + var(--toc-gap));
+}
+
 .post-body-wrapper {
   position: relative;
   max-width: var(--content-width);
@@ -1230,6 +1235,11 @@ figure.highlight .token.deleted {
   pointer-events: none;
 }
 
+.post-toc-left .toc-sidebar {
+  right: calc(100% + var(--toc-gap));
+  left: auto;
+}
+
 .toc-wrapper {
   position: sticky;
   top: calc(var(--header-height) + 2rem);
@@ -1243,6 +1253,12 @@ figure.highlight .token.deleted {
   padding-left: 1rem;
   box-shadow: inset 1px 0 0 var(--color-border-light);
   pointer-events: auto;
+}
+
+.post-toc-left .toc-wrapper {
+  padding-right: 1rem;
+  padding-left: 0;
+  box-shadow: inset -1px 0 0 var(--color-border-light);
 }
 
 /* 跟随当前章节滑动的高亮条，覆盖在上面那条轨道上。
@@ -1259,6 +1275,11 @@ figure.highlight .token.deleted {
   opacity: 0;
   pointer-events: none;
   transition: transform 0.22s ease, height 0.22s ease, opacity 0.18s ease;
+}
+
+.post-toc-left .toc-indicator {
+  right: 0;
+  left: auto;
 }
 
 .toc-indicator.is-visible {
@@ -1584,6 +1605,7 @@ figure.highlight .token.deleted {
 
   .post-has-toc {
     padding-right: 0;
+    padding-left: 0;
   }
 }
 
@@ -1594,6 +1616,7 @@ figure.highlight .token.deleted {
 
   .post-has-toc {
     padding-right: 0;
+    padding-left: 0;
   }
 }
 
