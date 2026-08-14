@@ -21,7 +21,7 @@ albums:
       - Bach
   - title: Funeral
     artist: Arcade Fire
-    category: nonclassical
+    category: vocal
     cover: /images/albums/arcade-fire-funeral.jpg
     tags:
       - Indie Rock
@@ -50,25 +50,25 @@ albums:
       - Ysaÿe
   - title: ATTICA!
     artist: MUSSY
-    category: nonclassical
+    category: vocal
     cover: /images/albums/mussy-attica.jpg
   - title: Disintegration
     artist: The Cure
-    category: nonclassical
+    category: vocal
     cover: /images/albums/the-cure-disintegration.jpg
     tags:
       - Gothic Rock
       - Post-Punk
   - title: In Rainbows
     artist: Radiohead
-    category: nonclassical
+    category: vocal
     cover: /images/albums/radiohead-in-rainbows.jpg
     tags:
       - Alternative Rock
       - Art Rock
   - title: OK Computer
     artist: Radiohead
-    category: nonclassical
+    category: vocal
     cover: /images/albums/radiohead-ok-computer.jpg
     tags:
       - Alternative Rock
@@ -90,7 +90,7 @@ albums:
       - Bach
   - title: TRST
     artist: TR/ST
-    category: nonclassical
+    category: vocal
     cover: /images/albums/trst-trst.jpg
     tags:
       - Synthpop
@@ -129,18 +129,18 @@ albums:
       - Lieder
   - title: Turbo
     artist: Turbo
-    category: nonclassical
+    category: vocal
     cover: /images/albums/turbo-turbo.jpg
   - title: Fushigi
     artist: Akina Nakamori
-    category: nonclassical
+    category: vocal
     cover: /images/albums/akina-nakamori-fushigi.jpg
     tags:
       - J-Pop
       - Art Pop
   - title: Blackout
     artist: Britney Spears
-    category: nonclassical
+    category: vocal
     cover: /images/albums/britney-spears-blackout.jpg
     tags:
       - Pop

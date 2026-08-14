@@ -2,21 +2,20 @@
   <header class="musik-header">
     <p class="musik-kicker">Katze’s record shelf</p>
     <h1>Musik</h1>
-    <p class="musik-intro">我喜欢的专辑，以及听过之后留下的文字。</p>
+    <p class="musik-intro">I hear you sing a golden hymn</p>
   </header>
 
   <% var albums = Array.isArray(page.albums) ? page.albums : []; %>
   <% if (albums.length) { %>
     <% var classicalCount = albums.filter(function(album) { return album.category === 'classical'; }).length; %>
-    <% var nonclassicalCount = albums.length - classicalCount; %>
+    <% var vocalCount = albums.filter(function(album) { return album.category === 'vocal'; }).length; %>
     <div class="album-filter" role="group" aria-label="按类型筛选专辑">
-      <button class="album-filter-button is-active" type="button" data-album-filter="all" aria-pressed="true">全部 <span><%= albums.length %></span></button>
-      <button class="album-filter-button" type="button" data-album-filter="classical" aria-pressed="false">古典 <span><%= classicalCount %></span></button>
-      <button class="album-filter-button" type="button" data-album-filter="nonclassical" aria-pressed="false">非古典 <span><%= nonclassicalCount %></span></button>
+      <button class="album-filter-button is-active" type="button" data-album-filter="classical" aria-pressed="true">古典 <span><%= classicalCount %></span></button>
+      <button class="album-filter-button" type="button" data-album-filter="vocal" aria-pressed="false">人声 <span><%= vocalCount %></span></button>
     </div>
     <div class="album-grid">
       <% albums.forEach(function(album) { %>
-        <article class="album-card" data-album-category="<%= album.category || 'nonclassical' %>">
+        <article class="album-card" data-album-category="<%= album.category || 'vocal' %>"<% if (album.category !== 'classical') { %> hidden<% } %>>
           <div class="album-cover-wrap">
             <% if (album.cover) { %>
               <img class="album-cover" src="<%- url_for(album.cover) %>" alt="<%= album.title %> — <%= album.artist %> album cover" loading="lazy">

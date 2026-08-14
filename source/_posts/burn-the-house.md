@@ -1,6 +1,7 @@
 ---
 title: Burn the House
 date: 2026-08-12 12:00:00
+permalink: burn-the-house/
 toc_position: left
 ---
 

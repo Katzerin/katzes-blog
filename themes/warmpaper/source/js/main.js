@@ -38,8 +38,7 @@
     }
 
     for (var j = 0; j < cards.length; j++) {
-      cards[j].hidden = selected !== 'all' &&
-        cards[j].getAttribute('data-album-category') !== selected;
+      cards[j].hidden = cards[j].getAttribute('data-album-category') !== selected;
     }
   });
 })();
