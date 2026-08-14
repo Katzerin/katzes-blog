@@ -7,9 +7,16 @@
 
   <% var albums = Array.isArray(page.albums) ? page.albums : []; %>
   <% if (albums.length) { %>
+    <% var classicalCount = albums.filter(function(album) { return album.category === 'classical'; }).length; %>
+    <% var nonclassicalCount = albums.length - classicalCount; %>
+    <div class="album-filter" role="group" aria-label="按类型筛选专辑">
+      <button class="album-filter-button is-active" type="button" data-album-filter="all" aria-pressed="true">全部 <span><%= albums.length %></span></button>
+      <button class="album-filter-button" type="button" data-album-filter="classical" aria-pressed="false">古典 <span><%= classicalCount %></span></button>
+      <button class="album-filter-button" type="button" data-album-filter="nonclassical" aria-pressed="false">非古典 <span><%= nonclassicalCount %></span></button>
+    </div>
     <div class="album-grid">
       <% albums.forEach(function(album) { %>
-        <article class="album-card">
+        <article class="album-card" data-album-category="<%= album.category || 'nonclassical' %>">
           <div class="album-cover-wrap">
             <% if (album.cover) { %>
               <img class="album-cover" src="<%- url_for(album.cover) %>" alt="<%= album.title %> — <%= album.artist %> album cover" loading="lazy">

@@ -20,6 +20,31 @@
 })();
 
 (function () {
+  var filter = document.querySelector('.album-filter');
+  if (!filter) return;
+
+  var buttons = filter.querySelectorAll('[data-album-filter]');
+  var cards = document.querySelectorAll('[data-album-category]');
+
+  filter.addEventListener('click', function (event) {
+    var button = event.target.closest && event.target.closest('[data-album-filter]');
+    if (!button || !filter.contains(button)) return;
+
+    var selected = button.getAttribute('data-album-filter');
+    for (var i = 0; i < buttons.length; i++) {
+      var active = buttons[i] === button;
+      buttons[i].classList.toggle('is-active', active);
+      buttons[i].setAttribute('aria-pressed', String(active));
+    }
+
+    for (var j = 0; j < cards.length; j++) {
+      cards[j].hidden = selected !== 'all' &&
+        cards[j].getAttribute('data-album-category') !== selected;
+    }
+  });
+})();
+
+(function () {
   // TOC scroll tracking
   var sidebar = document.querySelector('.toc-sidebar');
   var wrapper = sidebar && sidebar.querySelector('.toc-wrapper');
