@@ -422,7 +422,8 @@ img {
 .musik-intro {
   color: var(--color-text-secondary);
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 .album-filter {
@@ -1656,6 +1657,17 @@ figure.highlight .token.deleted {
 
   .main-content {
     padding: 1.5rem 1rem;
+  }
+
+  /* On phones the article should use the full reading width without a TOC. */
+  .post-has-toc .toc-sidebar {
+    display: none;
+  }
+
+  .post-has-toc,
+  .post-has-toc.post-toc-left {
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .header-inner {
