@@ -3,6 +3,7 @@
 # Navigation menu
 menu:
   Home: /
+  Archive: /archives
   Musik: /musik
   About: /about
 
