@@ -1,21 +1,21 @@
 ---
 title: Burn the House
-date: 2026-08-14 12:00:00
+date: 2026-08-12 12:00:00
 toc_position: left
 ---
 
-## I. The Ward
+## The Ward
 
 TBC.
 
-## II. Faith
+## The Belief
 
 TBC.
 
-## III. Moving In
+## The Residence
 
 TBC.
 
-## IV. The Fall of the House of Usher
+## The Fall of the House of Usher
 
 TBC.
